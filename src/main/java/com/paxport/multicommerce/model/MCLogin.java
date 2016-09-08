@@ -10,9 +10,9 @@ import javax.annotation.Nullable;
 
 @Value.Immutable
 @Serial.Structural
-@JsonSerialize(as = ImmutableLoginResponse.class)
-@JsonDeserialize(as = ImmutableLoginResponse.class)
-public interface LoginResponse {
+@JsonSerialize(as = ImmutableMCLogin.class)
+@JsonDeserialize(as = ImmutableMCLogin.class)
+public interface MCLogin {
 
     enum Status {SUCCESS,FAILURE,OTHER}
 
@@ -27,9 +27,9 @@ public interface LoginResponse {
     String getTrackingId();
 
     @Nullable
-    User getUser();
+    MCUser getUser();
 
     @Nullable
-    Organisation getEffectiveOrganisation();
+    MCOrganisation getEffectiveOrganisation();
 
 }

@@ -10,9 +10,9 @@ import javax.annotation.Nullable;
 
 @Value.Immutable
 @Serial.Structural
-@JsonSerialize(as = ImmutableOrganisation.class)
-@JsonDeserialize(as = ImmutableOrganisation.class)
-public abstract class Organisation {
+@JsonSerialize(as = ImmutableMCOrganisation.class)
+@JsonDeserialize(as = ImmutableMCOrganisation.class)
+public abstract class MCOrganisation {
 
     public enum Status {ACTIVE,DELETED,OTHER};
 
@@ -28,7 +28,7 @@ public abstract class Organisation {
     @Value.Parameter
     public abstract Status getStatus();
 
-    public static Organisation of (String code, String name, Status status) {
-        return ImmutableOrganisation.of(code,name,status);
+    public static MCOrganisation of (String code, String name, Status status) {
+        return ImmutableMCOrganisation.of(code,name,status);
     }
 }

@@ -6,17 +6,15 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.serial.Serial;
 import org.immutables.value.Value;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 import javax.annotation.Nullable;
 
 @Value.Immutable
 @Serial.Structural
-@JsonSerialize(as = ImmutableUser.class)
-@JsonDeserialize(as = ImmutableUser.class)
-public abstract class User {
+@JsonSerialize(as = ImmutableMCUser.class)
+@JsonDeserialize(as = ImmutableMCUser.class)
+public abstract class MCUser {
 
     public enum Status {ACTIVE,INACTIVE,PASSWORD_EXPIRED}
 
@@ -41,7 +39,7 @@ public abstract class User {
     public abstract String getPasswordUpdatedOn();
 
     @Nullable
-    public abstract Organisation getOrganisation();
+    public abstract MCOrganisation getOrganisation();
 
     @Nullable
     public abstract List<String> getRoles();

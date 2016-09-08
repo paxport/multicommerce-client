@@ -10,9 +10,9 @@ import javax.annotation.Nullable;
 
 @Value.Immutable
 @Serial.Structural
-@JsonSerialize(as = ImmutableLoginCredentials.class)
-@JsonDeserialize(as = ImmutableLoginCredentials.class)
-public abstract class LoginCredentials {
+@JsonSerialize(as = ImmutableMCCredentials.class)
+@JsonDeserialize(as = ImmutableMCCredentials.class)
+public abstract class MCCredentials {
 
     @Value.Parameter
     public abstract String getUsername();
@@ -23,8 +23,8 @@ public abstract class LoginCredentials {
     @Nullable
     public abstract String getTrackingId();
 
-    public static LoginCredentials of(String username, String password) {
-        return ImmutableLoginCredentials.of(username,password);
+    public static MCCredentials of(String username, String password) {
+        return ImmutableMCCredentials.of(username,password);
     }
 
 }

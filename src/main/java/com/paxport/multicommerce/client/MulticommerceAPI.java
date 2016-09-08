@@ -1,9 +1,13 @@
 package com.paxport.multicommerce.client;
 
-import com.paxport.multicommerce.model.LoginCredentials;
-import com.paxport.multicommerce.model.LoginResponse;
+import com.paxport.multicommerce.model.MCCard;
+import com.paxport.multicommerce.model.MCCredentials;
+import com.paxport.multicommerce.model.MCLogin;
+
+import java.util.List;
 
 import feign.Headers;
+import feign.Param;
 import feign.RequestLine;
 
 /**
@@ -14,7 +18,14 @@ public interface MulticommerceAPI {
 
     @RequestLine("POST /auth/login")
     @Headers("Content-Type: application/json")
-    LoginResponse login(LoginCredentials credentials);
+    MCLogin login(MCCredentials credentials);
 
+
+    @RequestLine("GET /cards/lodged")
+    @Headers({
+            "Content-Type: application/json",
+            "X-Auth-Token: {token}"
+    })
+    List<MCCard> lodgedCards(@Param("token") String token);
 
 }
