@@ -28,7 +28,14 @@ work in progress... currently just supports retrieving cards
     MCCredentials creds = MCCredentials.of(username,password);
     MCClient client = new MCClient();
     List<MCCard> lodgedCards = client.doInSession(s -> s.lodgedCards(),creds);
+  
+## JCenter Dependency
 
+    <dependency>
+      <groupId>com.paxport</groupId>
+      <artifactId>multicommerce-client</artifactId>
+      <version>0.1.0</version>
+    </dependency>
 
 ## To Release new version to Bintray
 
