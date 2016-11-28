@@ -1,6 +1,8 @@
 Multicommerce Java Client
 ===================
 
+<a href="https://travis-ci.org/paxport/multicommerce-client" target="_blank"><img src="https://api.travis-ci.org/paxport/multicommerce-client.svg?branch=master"/></a>
+
 POJO Client for Paxport's payment card system using Open Feign
 
 work in progress... currently just supports retrieving cards
